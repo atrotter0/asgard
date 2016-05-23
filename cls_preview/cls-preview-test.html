@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CLS Preview Test</title>
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="cls-preview.js"></script>
+	<meta description="">
+</head>
+<body>
+<div id="container">
+
+<!-- CLS Styles -->
+	<div class="form-group">
+		<label for="configurable_attributes_customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:header_image_url">Header image url</label>
+
+		<input class="form-control" id="configurable_attributes_customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:header_image_url" name="configurable_attributes[customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:header_image_url]" placeholder="https://g5-emails.herokuapp.com/g5.png" type="text" />
+
+		<p class="help-block">The image shown in the email header. (Supported size is 95 × 80px).</p>
+	</div>
+	<div class="form-group">
+		<label for="configurable_attributes_customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:header_background_color">Header background color</label>
+
+		<input class="form-control" id="configurable_attributes_customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:header_background_color" name="configurable_attributes[customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:header_background_color]" placeholder="#2A2A2A" type="text" />
+
+		<p class="help-block">The color shown in the email header.</p>
+	</div>
+	<div class="form-group">
+		<label for="configurable_attributes_customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:body_style">Body style</label>
+
+		<input class="form-control" id="configurable_attributes_customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:body_style" name="configurable_attributes[customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:body_style]" placeholder="font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: 400" type="text" />
+
+		<p class="help-block">The style of the email body.</p>
+	</div>
+	<div class="form-group">
+		<label for="configurable_attributes_customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:email_template_urn">Email template urn</label>
+
+		<input class="form-control" id="configurable_attributes_customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:email_template_urn" name="configurable_attributes[customer_emailer:g5-cl-55upag6fr-bella-vida-at-coyote-ridge:email_template_urn]" placeholder="customer-thanks" type="text" />
+
+		<p class="help-block">The g5-emails email_template_urn.</p>
+	</div>
+
+	<!-- preview window -->
+	<div id="preview">
+		<div id="preview-header">
+			<div id="preview-logo-container">
+				<div id="preview-logo"></div>
+			</div>
+		</div>
+		<div id="preview-body">
+			<p>Dear {{name}}},</p>
+			<p>Thank you for your interest in us. We have received your request and will contact you shortly</p>
+			<p>Below is a summary of your submission:</p>
+			<div id="preview-interior-body">
+				<p>P-name:
+				<br>{{name}}}</p>
+				<p>Are you a current customer?:
+				<br>{{y_n}}</p>
+				<p>If not, how did you hear about us?:
+				<br>{{hear_about_us}}</p>
+				<p>P-tel:
+				<br>{{phone_number}}}</p>
+				<p>U-email:
+				<br>{{email}}}</p>
+				<p>Message (250 character limit):
+				<br>{{message}}</p>
+			</div>
+			<p>We look forward to talking with you.</p>
+
+			<p>{{website_name}}} ({{website_template}})<br>
+			This email was sent to you as a service by G5 Search Marketing, Inc. ("G5"), to confirm your information request. Safety and security are a top priority of G5. If you have any concerns that the information within the email is fraudulent, please contact security@getg5.com immediately. Thank you.</p>
+
+			<p>If you no longer want to receive email notifications from this service you can unsubscribe by writing an email stating your interest to opt-out to unsubscribe@g5search.com</p>
+		</div>
+	</div>
+</div>
+
+<!-- test window -->
+<div id="test">
+	<div id="test-window"></div>
+	<div id="test-button-div">
+		<button id="run" onclick="runPreview()">Run</button>
+	</div>
+</div>
+</body>
+</html>
