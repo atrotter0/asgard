@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Test console page</title>
+	<link rel="stylesheet" type="text/css" href="consoleStyle.css">
+	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Amarante' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<!-- <script type="text/javascript" src="consoleScript.js"></script> -->
+	<script type="text/javascript" src="gameScript.js"></script>
+</head>
+<body>
+<div id="container">
+	<div id="nav">
+	nav
+	</div>
+	<div id="main">
+		<div id="control-buttons">
+			<button id="menu-button" onclick="charMenu()">Character</button><br>
+			<button id="menu-button" onclick="skillsMenu()">Skills</button><br>
+			<button id="menu-button" onclick="inventoryMenu()">Inventory</button><br>
+			<button id="menu-button" onclick="questsMenu()">Quests</button><br>
+		</div>
+		<div id="menu-window">
+			<div id="charMenu" class="flip">
+				<div id="h1-div"><div id="charMenuIcon"></div>Character</div>
+				<div id="charName" class="charBlock" onmouseover="overName()" onmouseout="mouseOff()">Name</div>
+				<div id="charRace" class="charBlock" onmouseover="overRace()" onmouseout="mouseOff()">Race</div>
+				<div id="charGender" class="charBlock" onmouseover="overGender()" onmouseout="mouseOff()">Gender</div>
+				<div id="charJob" class="charBlock" onmouseover="overJob()" onmouseout="mouseOff()">Job</div>
+				<div id="charLevel" class="charBlock" onmouseover="overLevel()" onmouseout="mouseOff()">Level</div>
+				<div id="charHpMp" class="charBlock" onmouseover="overHpMp()" onmouseout="mouseOff()">HP/MP</div>
+				<div id="charAtkBonus" class="charBlock" onmouseover="overAtk()" onmouseout="mouseOff()">AtkBonus</div>
+				<div id="charDefense" class="charBlock" onmouseover="overDef()" onmouseout="mouseOff()">Defense</div>
+				<div id="charExp" class="charBlock" onmouseover="overXp()" onmouseout="mouseOff()">Exp</div>
+				<div id="charStats" class="statBlock">Stats</div>
+				<div id="hpMpContainer">
+					<div id="iconsContainer">
+						<img id="hpIcon" src="images/health-icon.png">
+						<img id="powerIcon" onmouseover="overPowerIcon()" onmouseout="mouseOff()" src="images/mana-icon-2.png">
+					</div>
+					<div id="hitPointsContainer" onmouseover="overHp()" onmouseout="mouseOff()">
+						<div id="hp"></div>
+					</div>
+					<div id="manaPointsContainer" onmouseover="overMp()" onmouseout="mouseOff()">
+						<div id="mp"></div>
+					</div>
+				</div>
+			</div>
+			<div id="skillsMenu" class="flip">
+				<div id="h1-div"><div id="skillsMenuIcon"></div>Skills</div>
+				<div id="skillsList" class="skillsBlock">
+					<div id="skill0" class="skill" onmouseover="overSkill0()" onmouseout="mouseOff()"></div>
+					<div id="skill1" class="skill" onmouseover="overSkill1()" onmouseout="mouseOff()"></div>
+					<div id="skill2" class="skill" onmouseover="overSkill2()" onmouseout="mouseOff()"></div>
+					<div id="skill3" class="skill" onmouseover="overSkill3()" onmouseout="mouseOff()"></div>
+					<div id="skill4" class="skill" onmouseover="overSkill4()" onmouseout="mouseOff()"></div>
+				</div>
+			</div>
+			<div id="inventoryMenu" class="flip">
+				<div id="h1-div"><div id="invMenuIcon"></div>Inventory</div>
+				<div id="inventoryList" class="inventoryBlock">
+				<!-- use same functions for displaying inventory items as skills. only 20 items at one time -->
+					<!--<div id="invSpace">space</div>-->
+					<div id="icon0" class="invIcons"></div><div id="item0" class="item" onclick="viewItem()" onmouseover="itemHoverVal0()"></div>
+					<div id="icon1" class="invIcons"></div><div id="item1" class="item" onclick="viewItem()" onmouseover="itemHoverVal1()"></div>
+					<div id="icon2" class="invIcons"></div><div id="item2" class="item" onclick="viewItem()" onmouseover="itemHoverVal2()"></div>
+					<div id="icon3" class="invIcons"></div><div id="item3" class="item" onclick="viewItem()" onmouseover="itemHoverVal3()"></div>
+					<div id="icon4" class="invIcons"></div><div id="item4" class="item" onclick="viewItem()" onmouseover="itemHoverVal4()"></div>
+					<div id="icon5" class="invIcons"></div><div id="item5" class="item" onclick="viewItem()" onmouseover="itemHoverVal5()"></div>
+					<div id="icon6" class="invIcons"></div><div id="item6" class="item" onclick="viewItem()" onmouseover="itemHoverVal6()"></div>
+					<div id="icon7" class="invIcons"></div><div id="item7" class="item" onclick="viewItem()" onmouseover="itemHoverVal7()"></div>
+				</div>
+			</div>
+			<div id="questsMenu" class="flip">
+				<div id="h1-div"><div id="questsMenuIcon"></div>Quests</div>
+				<div id="questList" class="questsBlock">
+				<!-- use same functions for displaying quests as skills/items. only 10 quests at one time -->
+					<div id="quest0"></div>
+					<div id="quest1"></div>
+					<div id="quest2"></div>
+					<div id="quest3"></div>
+					<div id="quest4"></div>
+				</div>
+			</div>
+			<div id="tooltip-display" class="flip">
+				<div id="tooltip-text">test</div>
+			</div>
+		</div>
+		<div id="console" class="w3-container w3-center w3-animate-opacity">
+			<div id="combat-window">
+				<div id="enemy-box">
+					<div id="enemy-row0">
+						<div id="enemy-icon0"></div>
+						<div id="enemy-name0">poop</div>
+						<div id="enemy-hp-bar">
+							<div id="enemy-hp0"></div>
+						</div>
+						<button id="atkBtn" onclick="fight0()"><img src="images/attack.png"></button>
+						<button id="sklBtn"><img src="images/combat-skill.png"></button>
+					</div>
+					<div id="enemy-row1">
+						<div id="enemy-icon1"></div>
+						<div id="enemy-name1"></div>
+						<div id="enemy-hp1"></div>
+					</div>
+					<div id="enemy-row2">
+						<div id="enemy-icon2"></div>
+						<div id="enemy-name2"></div>
+						<div id="enemy-hp2"></div>
+					</div>
+					<div id="enemy-row3">
+						<div id="enemy-icon3"></div>
+						<div id="enemy-name3"></div>
+						<div id="enemy-hp3"></div>
+					</div>
+				</div>
+				<div id="combat-log"></div>
+				<div id="combat-menu">
+					<div id="player-row">
+						<div id="stat-name">Hit Points:</div>
+						<div id="player-hp-bar">
+							<div id="player-hp"></div>
+						</div>
+						<div id="stat-name">Power:</div>
+						<div id="player-pw-bar">
+							<div id="player-pw"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="viewBox">
+	  			 <div id="vBoxHeader"></div>
+	  			 <div id="vBoxDesc"></div>
+	  			 <div id="vBoxContent"></div>
+	  			 <div id="vBoxOptions">
+	  			   <button id="vBoxAccept" onclick="accept()">Accept</button>
+			   	   <button id="vBoxUse" onclick="useItem()">Use</button>
+			   	   <button id="vBoxEquip" onclick="equipItem()">Equip</button>
+			   	   <button id="vBoxDrop" onclick="dropItem()">Drop</button>
+			   	   <button id="vBoxCancel" onclick="closedVBox()">Cancel</button>
+	  			 </div>	
+			</div>
+			<div id="console-content-container">
+				<div id="content-one">console window</div>
+				<div id="content-options">
+					<button id="choice1Btn" onclick="choice1()">1</button>
+					<button id="choice2Btn" onclick="choice2()">2</button>
+					<button id="choice3Btn" onclick="choice3()">3</button>
+				</div>
+				<div id="continue-box">
+					<button id="continueBtn" onclick="continueStory()">Continue</button>
+				</div>
+				<div id="loc-content">
+					<ul class="parent-menu">
+				        <li><a href="#">Exits</a>
+				        <ul class="sub-menu">
+				            <li id="exit0" onclick="exitClick()" onmouseover="runHoverExit0()"><a href="#"></a></li>
+				            <li id="exit1" onclick="exitClick()" onmouseover="runHoverExit1()"><a href="#"></a></li>
+				            <li id="exit2" onclick="exitClick()" onmouseover="runHoverExit2()"><a href="#"></a></li>
+				            <li id="exit3" onclick="exitClick()" onmouseover="runHoverExit3()"><a href="#"></a></li>
+				            </ul></li>
+				        <li><a href="#">Items</a>
+				            <ul class="sub-menu">
+				            <li id="stuff0" onclick="itemClick()" onmouseover="runHoverItem0()"><a href="#"></a></li>
+				            <li id="stuff1" onclick="itemClick()" onmouseover="runHoverItem1()"><a href="#"></a></li>
+				            <li id="stuff2" onclick="itemClick()" onmouseover="runHoverItem2()"><a href="#"></a></li>
+				            <li id="stuff3" onclick="itemClick()" onmouseover="runHoverItem3()"><a href="#"></a></li>
+				            </ul></li>
+				        <li><a href="#">NPCs</a>
+				            <ul class="sub-menu">
+				            <li id="npc0"><a href="#">Surgis</a></li>
+				            <li id="npc1"><a href="#"></a></li>
+				            <li id="npc2"><a href="#"></a></li>
+				            <li id="npc3"><a href="#"></a></li>
+				            </ul></li>
+				         <li><a href="#">Enemies</a>
+				            <ul class="sub-menu">
+				            <li id="enemy0" onclick="fightEnemy()" onmouseover="runHoverEnemy0()"><a href="#">Frost Bat</a></li>
+				            <li id="enemy1" onclick="fightEnemy1()" onmouseover="runHoverEnemy1()"><a href="#">Frost Bat</a></li>
+				            <li id="enemy2" onclick="fightEnemy2()" onmouseover="runHoverEnemy2()"><a href="#"></a></li>
+				            <li id="enemy3" onclick="fightEnemy3()" onmouseover="runHoverEnemy3()"><a href="#"></a></li>
+				            </ul></li>
+				    </ul>
+				</div>
+			</div>
+		</div>
+		<div id="bottom-display"></div>
+	</div>
+		<!-- <div id="tooltip-display" class="flip">
+			<div id="tooltip-text">test</div>
+		</div> -->
+	</div>
+</div>
+
+<div id="test-container">
+	<div id="test-window">
+	test window
+	</div>
+	<button id="test-btn" onclick="test()">Run Test</button>
+	<br><select id="testJobSelect" onchange="testJobSelect()" disabled>
+		<option value="Warrior">Warrior</option>
+		<option value="Hunter">Hunter</option>
+		<option value="Rogue">Rogue</option>
+		<option value="Wizard">Wizard</option>
+</div>
+
+</body>
+</html>

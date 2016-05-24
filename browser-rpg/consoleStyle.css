@@ -1,0 +1,924 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+#container {
+	width: 1000px;
+	margin: 5px auto;
+	min-height: 740px;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#nav {
+	width: 100%;
+	min-height: 50px;
+	background-color: lightyellow;
+	border: 1px black solid;
+	text-align: center;
+}
+
+#main {
+	width: 100%;
+	min-height: 450px;
+	bborder: 1px red dashed;
+}
+
+#control-buttons {
+	width: 15%;
+	min-height: 400px;
+	float: left;
+	border-right: 5px solid black;
+	background-color: #1A1A1A;
+	border-radius: 0px 0px 0px 10px;
+	text-align: center;
+}
+
+#console {
+	width: 60%;
+	min-height: 500px;
+	float: left;
+	border: 1px #F0C999 solid;
+	background-image: url(images/console-bg-1.jpg);
+	background-repeat: no-repeat;
+	padding: 10px 10px 0px 10px;
+}
+
+#console-content-container {
+	width: 99%;
+	bborder: 1px red solid;
+	background-color: rgba(26, 26, 26, .7);
+	margin: 0px auto;
+	height: 573px;
+	font-family: 'Merriweather', serif;
+	font-size: 15px;
+	text-align: left;
+	color: white;
+	box-shadow: 2px 2px 5px 5px black;
+	padding: 5px;
+	display: block;
+}
+
+#content-one {
+	width: 100%;
+	margin: 0px auto;
+	min-height: 368px;
+	float: left;
+	border: 3px wave blue;
+	padding: 5px;
+	text-align: left;
+	overflow: auto;
+}
+
+#content-options {
+	width: 80%;
+	margin-left: 55px;
+	min-height: 200px;
+	float: left;
+	bborder: 1px solid green;
+	padding: 10px;
+	text-align: center;
+	display: block;
+	overflow: hidden;
+}
+
+#content-options > button {
+	margin: 5px;
+	padding: 3px;
+	width: 100px;
+	min-height: 50px;
+	border-radius: 10px;
+	font-family: 'Indie Flower', cursive;
+	font-size: 25px;
+	font-weight: bold;
+	color: black;
+	background-image: url(images/rough-stone-3.jpg);
+	background-repeat: no-repeat;
+	box-shadow: 1px 1px 4px 4px black;
+}
+
+#content-options > button:hover {
+	box-shadow: 3px 2px 10px 4px white;
+	font-size: 28px;
+	color: white;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#continue-box {
+	width: 80%;
+	margin-left: 55px;
+	min-height: 200px;
+	float: left;
+	padding: 10px;
+	text-align: center;
+	display: none;
+	overflow: hidden;
+}
+
+#continue-box > button {
+	margin: 5px;
+	padding: 3px;
+	width: 100px;
+	min-height: 50px;
+	border-radius: 10px;
+	font-family: 'Indie Flower', cursive;
+	font-size: 22px;
+	font-weight: bold;
+	color: black;
+	background-image: url(images/rough-stone-3.jpg);
+	background-repeat: no-repeat;
+	box-shadow: 1px 1px 4px 4px black;
+}
+
+#continue-box > button:hover {
+	box-shadow: 3px 2px 10px 4px white;
+	font-size: 25px;
+	color: white;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#choice1Btn, #choice2Btn, #choice3Btn {
+	display: inline;
+	text-align: center;
+}
+
+#loc-content {
+	width: 100%;
+	min-height: 200px;
+	float: left;
+	padding: 10px;
+	text-align: center;
+	display: none;
+	overflow: hidden;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#loc-content ul {
+	list-style-type: none;
+}
+
+#loc-content .parent-menu > li {
+	width: 130px; 
+	height: 30px;
+	float: left;
+	margin: 0px 2px;
+	position: relative;
+	z-index: 10;
+}
+
+#loc-content a {
+	display: block;
+	width: 130px;
+	height: 30px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 30px 0px 30px 0px;
+	line-height: 25px;
+	background-color: black;
+	color: #EEE;
+	transition: font-size 400ms ease-in-out;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#loc-content a:hover {
+	text-shadow: 2px 2px 10px #ffffff;
+	font-size: 20px;
+}
+
+#loc-content li > a:hover {
+	text-shadow: 2px 2px 10px #ffffff;
+	font-size: 18px;
+}
+
+#loc-content .sub-menu {
+	position: relative;
+	left: 0px;
+	top: -35px; /*35*/
+	z-index: -1;
+}
+
+#loc-content .sub-menu li {
+	width: 140px;
+	height: 30px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding-top: 5px;
+	transition: top 400ms ease-in-out;
+	border-radius: 0px 0px 0px 0px;
+}
+
+/*#loc-content .sub-menu li a {
+	background-color: rgb(26,26,26);
+	bborder: 3px black solid;
+	bbox-shadow: 2px 2px 3px black;
+}*/
+
+#loc-content li:hover .sub-menu li:nth-child(1) {left: 0px; top: 35px;}
+#loc-content li:hover .sub-menu li:nth-child(2) {left: 0px; top: 70px;}
+#loc-content li:hover .sub-menu li:nth-child(3) {left: 0px; top: 105px;}
+#loc-content li:hover .sub-menu li:nth-child(4) {left: 0px; top: 140px;}
+#loc-content li:hover .sub-menu li:nth-child(5) {left: 0px; top: 175px;}
+
+#exit0, #exit1, #exit2, #exit3, #things0, #things1, #things2, #things3, #npc0, #npc1, #npc2, #npc3, #enemy0, #enemy1, #enemy2, #enemy3 {
+	display: none;
+}
+
+
+#menu-window {
+	width: 25%;
+	float: right;
+	min-height: 550px;
+	background-color: #1A1A1A;
+	padding: 5px;
+	text-align: center;
+	border-left: 5px black solid;
+	border-radius: 0px 0px 10px 0px;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#tooltip-display {
+	margin-top: 20px;
+	float: right;
+	display: none;
+	min-height: 72px;
+	text-align: left;
+}
+
+#tooltip-text {
+	margin-left: 4px;
+	margin-top: 5px;
+	width: 95%;
+	border: 3px black solid;
+	padding: 5px;
+	background-color: rgb(255,255,224);
+	color: black;
+	min-height: 50px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 10px 2px grey;
+}
+
+#menu-button {
+	margin-top: 10px;
+	margin-left: 5px;
+	padding: 5px;
+	width: 140px;
+	min-height: 80px;
+	background-color: transparent;
+	font-family: 'Tangerine', cursive;
+	font-size: 35px;
+	color: black;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+	background-image: url(images/parchment.png);
+	background-repeat: no-repeat;
+	background-size: 130px;
+	transition: background-size 300ms, text-shadow 400ms ease-in-out;
+}
+
+#menu-button:hover {
+	text-shadow: 3px 3px 8px black;
+	color: #E1EBEA;
+	font-weight: bold;
+	font-size: 36px;
+	bbackground-image: url(images/parchment-hover.png);
+	background-repeat: no-repeat;
+	background-size: 140px;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#charMenu, #skillsMenu, #inventoryMenu, #questsMenu, .flip {
+	width: 100%;
+	background-color: transparent;
+	font-family: 'Merriweather', serif;
+	color: white;
+	
+}
+
+#charMenu {
+	display: none;
+}
+
+#skillsMenu {
+	display: none;
+}
+
+#inventoryMenu {
+	display: none;
+}
+
+#questsMenu {
+	display: none;
+}
+
+#charMenuIcon {
+	width: 46px;
+	height: 46px;
+	float: left;
+	margin-left: 40px;
+	margin-right: 10px;
+	bborder: 1px solid red;
+	background-image: url(images/char-header-icon.jpg);
+}
+
+#skillsMenuIcon {
+	width: 46px;
+	height: 46px;
+	float: left;
+	margin-left: 50px;
+	margin-right: 10px;
+	background-image: url(images/skills-header-icon.jpg);
+}
+
+#invMenuIcon {
+	width: 46px;
+	height: 46px;
+	float: left;
+	margin-top: 5px;
+	margin-left: 40px;
+	margin-right: 5px;
+	background-image: url(images/inv-header-icon.jpg);
+}
+
+#questsMenuIcon {
+	width: 46px;
+	height: 46px;
+	float: left;
+	margin-top: 5px;
+	margin-left: 50px;
+	margin-right: 10px;
+	background-image: url(images/quests-header-icon.jpg);
+}
+
+#h1-div {
+	margin: 0px;
+	margin-bottom: 5px;
+	text-align: left;
+	font-family: 'Tangerine', cursive;
+	font-size: 38px;
+	color: white;
+	padding-top: 15px;
+	background-color: black;
+	min-height: 90px;
+	width: 100%;
+	bborder: 1px solid blue;
+}
+
+#hpMpContainer {
+	margin-top: 10px;
+	padding-top: 5px;
+	float: left;
+	width: 100%;
+	min-height: 70px;
+	background-image: url(images/stone-1.jpg);
+	box-shadow: 4px 4px 10px black;
+	border-radius: 5px;
+}
+
+#iconsContainer {
+	padding-top: 2px;
+	float:left;
+	width: 35px;
+	text-align: center;
+	min-height: 60px;
+}
+
+#iconsContainer > img {
+	margin-bottom: 1px;
+}
+
+#hitPointsContainer {
+	float: left;
+	width: 80%;
+	min-height: 25px;
+	max-height: 30px;
+	min-width: 10px;
+}
+
+#hp {
+	padding-top: 3px;
+	padding-left: 3px;
+	height: 29px;
+	background: rgba(252,0,0, .5);
+	text-align: left;
+	border-radius: 2px 2px 2px 2px;
+	box-shadow: 3px 3px 3px black;
+	min-width: 22px;
+	transition: width 1s;
+}
+
+#manaPointsContainer {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	float: left;
+	width: 80%;
+	min-height: 25px;
+	max-height: 30px;
+	min-width: 10px;
+}
+
+#mp {
+	padding-top: 3px;
+	padding-left: 3px;
+	height: 29px;
+	background: rgba(255,204,0, .5);
+	text-align: left;
+	border-radius: 2px 2px 2px 2px;
+	box-shadow: 3px 3px 3px black;
+	min-width: 22px;
+	transition: width 1s;
+}
+
+.charBlock {
+	float: left;
+	width: 74px;
+	padding: 3px;
+	border-radius: 5px;
+	border: 0px black solid;
+	min-height: 30px;
+	margin: 2px;
+	text-align: center;
+	background-image: url(images/stone-1.jpg);
+	box-shadow: 4px 4px 10px black;
+	color: #FFF;
+}
+
+.statBlock {
+	padding: 3px;
+	padding-top: 10px;
+	width: 234px;
+	min-height: 150px;
+	margin-top: 5px;
+	float: left;
+	text-align: center;
+	background-image: url(images/stone-1.jpg);
+	box-shadow: 4px 4px 10px black;
+	background-color: black;
+	border-radius: 10px;
+	color: #FFF;
+}
+
+.skillsBlock {
+	padding-top: 5px;
+	padding-left: 10px;
+	width: 234px;
+	min-height: 250px;
+	margin-top: 2px;
+	float: left;
+	text-align: left;
+	background-image: url(images/stone-2.jpg);
+	background-repeat: no-repeat;
+	background-size: 300px;
+	box-shadow: 4px 4px 10px black;
+	background-color: black;
+	border-radius: 10px;
+	color: #FFF;
+}
+
+.skill {
+	width: 100%;
+	height: 30px;
+	float: left;
+}
+
+#skill0, #skill1, #skill2, #skill3, #skill4 {
+	transition: text-shadow 400ms, color 400ms ease-in-out;
+	bborder: 1px solid blue;
+	display: none;
+}
+
+#skill0:hover, #skill1:hover, #skill2:hover, #skill3:hover, #skill4:hover {
+	text-shadow: 3px 3px 10px white;
+	color: #E1EBEA;
+}
+
+.inventoryBlock {
+	padding-top: 5px;
+	padding-left: 10px;
+	width: 234px;
+	height: 430px;
+	margin-top: 2px;
+	float: left;
+	text-align: left;
+	background-image: url(images/stone-2.jpg);
+	background-repeat: no-repeat;
+	background-size: 300px;
+	box-shadow: 4px 4px 10px black;
+	background-color: black;
+	border-radius: 10px;
+	color: #FFF;
+	overflow: auto;
+}
+
+#invSpace {
+	float: right;
+	position: relative;
+	top: 395px;
+	width: 75px;
+	height: 30px;
+	bborder: 1px solid red;
+	display: none;
+	text-align: center;
+}
+
+#icon0, #icon1, #icon2, #icon3, #icon4, #icon5, #icon6, #icon7 {
+	width: 22px;
+	height: 22px;
+	float: left;
+	margin-right: 5px;
+	background-image: url(images/item-icon.png);
+	display: none;
+}
+
+#item0, #item1, #item2, #item3, #item4, #item5, #item6, #item7 {
+	transition: text-shadow 400ms, color 400ms ease-in-out;
+	height: 25px;
+	width: 175px;
+	bborder: 1px red solid;
+	display: none;
+}
+
+#item0:hover, #item1:hover, #item2:hover, #item3:hover, #item4:hover, #item5:hover {
+	text-shadow: 3px 3px 10px white;
+	color: #E1EBEA;
+}
+
+.questsBlock {
+	padding-top: 5px;
+	padding-left: 10px;
+	width: 234px;
+	min-height: 250px;
+	margin-top: 2px;
+	float: left;
+	text-align: left;
+	background-image: url(images/stone-2.jpg);
+	background-repeat: no-repeat;
+	background-size: 300px;
+	box-shadow: 4px 4px 10px black;
+	background-color: black;
+	border-radius: 10px;
+	color: #FFF;
+}
+
+.block {
+	width: 30%;
+	height: 58px;
+	float: left;
+	text-align: center;
+	display: block;
+	overflow: hidden;
+	background-color: transparent;
+	margin: 2px 2px auto;
+	bborder: 1px green solid;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#bottom-display {
+	margin-left: 150px;
+	width: 600px;
+	height: 50px;
+	float: left;
+	border-top: 5px solid black;
+	border-left: .5px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	background-color: #1a1a1a;
+	border-radius: 0px 0px 10px 10px;
+	padding: 10px;
+	color: white;
+}
+
+
+#viewBox {
+	margin-left: 90px;
+	font-family: 'Merriweather', serif;
+	font-size: 15px;		
+	position: fixed;
+	top: 145px;
+	width: 400px;
+	display: none;
+	z-index: 1;	
+	bbackground: rgba(26,26,26, 0.8);
+	background-color: rgb(26,26,26);
+	border-radius: 10px;
+	color: white;
+	box-shadow: 3px 3px 4px 4px black;
+	text-shadow: 3px 3px 8px black;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#vBoxHeader {
+	margin-top: 20px;
+	margin-bottom: 5px;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#vBoxDesc {
+	width: 90%;
+	padding-left: 20px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	text-align: left;
+	font-size: 12px;
+	font-style: italic; 
+
+}
+
+#vBoxContent {
+	width: 50%;
+	height: 50px;
+	text-align: left;
+	margin-left: 20%;
+}
+
+#vBoxOptions {
+	margin-top: 20px;
+	width: 100%;
+	height: 70px;
+	text-align: center;
+}
+
+#viewBox button {
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 20px;
+	padding: 3px;
+	width: 70px;
+	min-height: 30px;
+	border-radius: 10px;
+	font-family: 'Merriweather', serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+	background-image: url(images/rough-stone-3.jpg);
+	background-repeat: no-repeat;
+	box-shadow: 1px 1px 4px 4px black;
+	transition: box-shadow 400ms, color 400ms ease-in-out;
+}
+
+#viewBox button:hover {
+	box-shadow: 2px 2px 8px 3px white;
+	color: white;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#vBoxUse, #vBoxEquip, #vBoxAccept, #vBoxCancel, #vBoxDrop {
+	display: none;
+}
+
+#combat-window {
+	width: 99%;
+	bborder: 1px red solid;
+	background-color: rgba(26, 26, 26, .7);
+	margin: 0px auto;
+	height: 573px;
+	font-family: 'Merriweather', serif;
+	font-size: 15px;
+	text-align: left;
+	color: white;
+	box-shadow: 2px 2px 5px 5px black;
+	padding: 5px;
+	display: none;
+	text-shadow: 3px 3px 8px black;
+}
+
+#enemy-box {
+	display: block;
+	width: 100%;
+	height: 270px;
+	margin: 0 auto;
+	bborder: 1px green solid;
+	float: left;
+	background-color: #1A1A1A;
+	border-radius: 10px 10px 0px 0px;
+}
+
+#enemy-box button {
+	width: 46px;
+	height: 46px;
+	background-color: #1A1A1A;
+	margin-top: 4px;
+	margin-right: 5px;
+	box-shadow: 2px 2px 5px 2px black;
+	transition: box-shadow 300ms ease-in-out;
+	border-radius: 5px;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#atkBtn:hover, #sklBtn:hover {
+	box-shadow: 2px 2px 5px 2px white;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#enemy-row0, #enemy-row1, #enemy-row2, #enemy-row3 {
+	display: block;
+	width: 540px;
+	height: 55px;
+	float: left;
+	margin-bottom: 10px;
+	margin-top: 8px;
+	margin-left: 10px;
+	background-image: url(images/stone-3.jpg);
+	background-repeat: no-repeat;
+	background-size: 700px;
+	border-radius: 10px;
+	box-shadow: 3px 3px 4px 4px black;
+	transition: box-shadow 300ms ease-in-out;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#enemy-row0:hover {
+	box-shadow: 3px 3px 4px 4px #990000;
+}
+
+#enemy-row1, #enemy-row2, #enemy-row3 {
+	display: none;
+}
+
+#enemy-name0, #enemy-name1, #enemy-name2, #enemy-name3 {
+	display: block;
+	width: 30%;
+	height: 50px;
+	float: left;
+	margin-right: 5px;
+	padding-top: 20px;
+	text-shadow: 3px 3px 4px black;
+	text-decoration: none;
+}
+
+#enemy-icon0, #enemy-icon1, #enemy-icon2, #enemy-icon3 {
+	display: block;
+	width: 54px;
+	height: 55px;
+	float: left;
+	background-color: black;
+	float: left;
+	margin-right: 18px;
+	background-image: url(images/enemy-icon.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 10px 0px 0px 10px;
+
+}
+
+#enemy-hp0, #enemy-hp1, #enemy-hp2, #enemy-hp3 {
+	width: 100%;
+	height: 35px;
+	background: rgba(252,0,0, .5);
+	border-radius: 5px;
+	bbox-shadow: 4px 4px 10px black;
+	transition: width 1s;
+}
+
+#enemy-hp-bar {
+	display: block;
+	width: 30%;
+	height: 35px;
+	float: left;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px black;
+	margin-top: 10px;
+	margin-right: 20px;
+}
+
+#combat-log {
+	display: block;
+	width: 100%;
+	height: 210px;
+	margin: 0 auto;
+	border: 5px black solid;
+	float: left;
+	overflow: auto;
+	background-color: rgba(25,25,25, .5);
+}
+
+#combat-menu {
+	display: block;
+	width: 100%;
+	height: 75px;
+	margin: 0 auto;
+	bborder: 1px blue solid;
+	float: left;
+	background-color: #1A1A1A;
+	background-repeat: no-repeat;
+	background-size: 600px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+#player-row {
+	width: 540px;
+	height: 55px;
+	float: left;
+	margin-bottom: 10px;
+	margin-top: 8px;
+	margin-left: 10px;
+	background-image: url(images/stone-3.jpg);
+	background-repeat: no-repeat;
+	background-size: 700px;
+	border-radius: 10px;
+	box-shadow: 3px 3px 4px 4px black;
+	transition: box-shadow 300ms ease-in-out;
+	cursor: url(images/gauntlet.cur),url(images/gauntlet.cur),auto;
+}
+
+#stat-name {
+	float: left;
+	height: 55px;
+	padding-top: 18px;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+#player-hp-bar {
+	display: block;
+	width: 30%;
+	height: 35px;
+	float: left;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px black;
+	margin-top: 10px;
+	margin-right: 20px;
+	bborder: 1px solid black;
+}
+
+#player-pw-bar {
+	display: block;
+	width: 30%;
+	height: 35px;
+	float: left;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px black;
+	margin-top: 10px;
+	margin-right: 20px;
+}
+
+#player-hp {
+	width: 100%;
+	height: 35px;
+	background: rgba(252,0,0, .5);
+	border-radius: 5px;
+	bbox-shadow: 4px 4px 10px black;
+	transition: width 1s;
+}
+
+#player-pw {
+	width: 100%;
+	height: 35px;
+	background: rgba(255,204,0, .5);
+	border-radius: 5px;
+	bbox-shadow: 4px 4px 10px black;
+	transition: width 1s;
+}
+
+
+/***** TESTING STYLE *****/
+
+#test-container {
+	margin: 0 auto;
+	padding: 5px;
+	width: 80%;
+	border: 5px black solid;
+	min-height: 200px;
+	text-align: center;
+	display: block;
+}
+
+#test-btn {
+	width: 75px;
+	min-height: 50px;
+	background-color: red;
+	color: white;
+	border-radius: 5px;
+	box-shadow: 5px 3px 10px 5px black;
+}
+
+#test-btn:hover, #testJobSelect:hover {
+	background-color: green;
+	box-shadow: 5px 3px 5px 5px black;
+}
+
+#test-window {
+	width: 80%;
+	margin: 5px auto;
+	border: 1px black solid;
+	min-height: 200px;
+	text-align: left;
+	color: black;
+}
+
+#testJobSelect {
+	width: 150px;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: red;
+}
+
+
