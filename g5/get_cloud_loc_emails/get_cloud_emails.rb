@@ -167,6 +167,8 @@ def export_emails(file_name, arr)
 	end
 end
 
+# test
+
 # script start
 # example cls URN: cls_urn = "g5-cls-ifu2jcq3-pensam-capital"
 cls_urn = "g5-cls-ifu2jcq3-pensam-capital"
